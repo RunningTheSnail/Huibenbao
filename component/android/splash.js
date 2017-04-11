@@ -8,8 +8,19 @@ import {
   Text,
   View,
   Image,
-  ViewPagerAndroid
+  ViewPagerAndroid,
+  TouchableWithoutFeedback
 } from 'react-native';
+
+import {NavigationActions} from 'react-navigation';
+
+const resetAction = NavigationActions.reset({
+  index: 0,
+  actions: [
+    NavigationActions.navigate({routeName: 'MainPage'}),
+  ]
+});
+
 
 export default class Splash extends Component {
   static navigationOptions = {
@@ -35,7 +46,11 @@ export default class Splash extends Component {
             <Image style={styles.welcome} source={require('../../assets/image/ddd.png')}/>
           </View>
           <View>
-            <Image style={styles.welcome} source={require('../../assets/image/eee.jpeg')}/>
+            <TouchableWithoutFeedback onPress={() => {
+              this.props.navigation.dispatch(resetAction)
+            }}>
+              <Image style={styles.welcome} source={require('../../assets/image/eee.jpeg')}/>
+            </TouchableWithoutFeedback>
           </View>
         </ViewPagerAndroid>
     );

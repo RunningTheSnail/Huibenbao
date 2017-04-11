@@ -14,6 +14,7 @@ import {
 import {StackNavigator} from 'react-navigation';
 import Welcome from './component/android/welcome';
 import Splash from './component/android/splash';
+import MainPage from './component/android/main';
 
 export default class Huibenbao extends Component {
   static navigationOptions = {
@@ -36,6 +37,7 @@ export default class Huibenbao extends Component {
 const HuibenbaoNav = StackNavigator({
   Huibenbao: {screen: Huibenbao},
   Splash: {screen: Splash},
+  MainPage: {screen: MainPage}
 });
 
 
