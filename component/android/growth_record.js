@@ -11,23 +11,6 @@ import {
 } from 'react-native';
 
 export default class GrowthRecord extends Component {
-  static navigationOptions = {
-    header: {
-      visible: false
-    },
-    tabBar: {
-      label: "成长记录",
-      icon: ({focused}) => {
-        if (focused) {
-          return <Image source={require('../../assets/image/home_tab_home_selected.png')}
-                        style={{width: 26, height: 26}}/>
-        } else {
-          return <Image source={require('../../assets/image/home_tab_home_normal.png')}
-                        style={{width: 26, height: 26}}/>
-        }
-      }
-    }
-  };
 
   render() {
     return (<Text>视频</Text>);

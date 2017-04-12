@@ -20,6 +20,7 @@ import Recommend from './recommend';
 import Huibenguan from './hui_ben_guan';
 import ListenHuiben from './listen_hui_ben';
 import GrowthRecord from './growth_record';
+var ScrollableTabView = require('react-native-scrollable-tab-view');
 
 class MainPage extends Component {
   static navigationOptions = {
@@ -37,7 +38,12 @@ class MainPage extends Component {
 
   render() {
     return (
-        <Text>Main Page</Text>
+        <ScrollableTabView>
+          <Recommend tabLabel='推荐'/>
+          <Huibenguan tabLabel='绘本馆'/>
+          <ListenHuiben tabLabel='听绘本'/>
+          <GrowthRecord tabLabel='成长记录'/>
+        </ScrollableTabView>
     );
   }
 }
@@ -62,9 +68,9 @@ const MainNav = TabNavigator({
   }
 });
 
-export default AllNav = TabNavigator({
+export default MainCenter = TabNavigator({
   Home: {
-    screen: MainNav
+    screen: MainPage
   },
   Video: {
     screen: Video
